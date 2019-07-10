@@ -1,0 +1,215 @@
+%!PS-Adobe-3.1 EPSF-3.0
+%%BoundingBox: 0 0 540 8
+%%LanguageLevel: 3
+
+%% Common postScript header.
+
+/boxHere {
+% Draw a box at current position.
+% Usage width height boxAt
+dup 0 exch   %stack width height 0 height
+rlineto      %stack width height
+exch dup 0   %stack height width width 0
+rlineto      %stack height width
+exch         %stack width height
+0 exch       %stack width 0 height
+neg          %stack width 0 -height
+rlineto      %stack width
+neg 0        %stack -width 0
+rlineto
+} def
+
+/boxAt {
+% Draw a box at a position.  Usage:
+% width height x y boxAt
+moveto
+boxHere
+} def
+
+/fillBox {
+% Draw filled box at a position. Usage:
+% width height x y fillBox
+newpath
+boxAt
+fill
+} def
+
+/strokeBox {
+% Draw stroked box at a position. Usage:
+% width height x y strokeBox
+newpath
+boxAt
+stroke
+} def
+
+/smallFont {
+/Times-Roman findfont
+10 scalefont
+setfont
+} def
+
+/showBefore {
+% Draw text immediately before rather
+% than immediately after current position.
+% Usage (some text) showBefore
+dup
+stringwidth
+neg
+exch
+neg
+exch
+rmoveto
+show
+} def
+
+/showMiddle {
+% Draw text centered at current position.
+% Usage (some text) showMiddle
+dup stringwidth
+2 div neg
+exch
+2 div neg
+exch
+rmoveto
+show
+} def
+
+/ellipse {
+/endangle exch def
+/startangle exch def
+/yrad exch def
+/xrad exch def
+/y exch def
+/x exch def
+/savematrix matrix currentmatrix def
+x y translate
+xrad yrad scale
+0 0 1 startangle endangle arc
+savematrix setmatrix
+} def
+/fillTextBox {
+true charpath pathbbox
+/y2 exch def /x2 exch def
+/y1 exch def /x1 exch def
+/w x2 x1 sub def
+/h y2 y1 sub def
+w h x1 y1 fillBox
+} def
+
+smallFont
+
+gsave
+cliprestore 0 0 540 7.5499 rectclip
+0.359521 setlinewidth
+cliprestore 0 0 540 7.1904 rectclip
+0 setgray
+/Helvetica findfont 3.882823 scalefont setfont
+19.2344 2.1212 moveto
+(chr21 \(p13-q22.3\)) showMiddle
+cliprestore 38.1092 0 501.8908 7.1904 rectclip
+33.0759 3.2357 39.5473 2.1571 fillBox
+1 setgray
+56.2650 2.3009 moveto
+(21p13) showMiddle
+0.4980 setgray
+41.7044 3.2357 72.6232 2.1571 fillBox
+1 setgray
+93.6551 2.3009 moveto
+(21p12) showMiddle
+0 setgray
+41.7044 3.2357 114.3276 2.1571 fillBox
+1 setgray
+135.3595 2.3009 moveto
+(21p11.2) showMiddle
+0.4980 setgray
+11.8642 3.2357 156.0320 2.1571 fillBox
+1 setgray
+162.1438 2.3009 moveto
+(p11.1) showMiddle
+0.4980 setgray
+10.4261 3.2357 167.8961 2.1571 fillBox
+1 setgray
+173.2889 2.3009 moveto
+(11.1) showMiddle
+0.8902 setgray
+21.5712 3.2357 178.3222 2.1571 fillBox
+0 setgray
+189.2876 2.3009 moveto
+(21q11.2) showMiddle
+81.2517 3.2357 199.8935 2.1571 fillBox
+1 setgray
+240.6991 2.3009 moveto
+(21q21.1) showMiddle
+0.8902 setgray
+30.9188 3.2357 281.1451 2.1571 fillBox
+0 setgray
+296.7843 2.3009 moveto
+(21q21.2) showMiddle
+0.2235 setgray
+49.9734 3.2357 312.0639 2.1571 fillBox
+1 setgray
+337.2304 2.3009 moveto
+(21q21.3) showMiddle
+0.8902 setgray
+44.9401 3.2357 362.0373 2.1571 fillBox
+0 setgray
+384.6871 2.3009 moveto
+(21q22.11) showMiddle
+0.3333 setgray
+21.5712 3.2357 406.9774 2.1571 fillBox
+1 setgray
+417.9427 2.3009 moveto
+(21q22.12) showMiddle
+0.8902 setgray
+20.1332 3.2357 428.5486 2.1571 fillBox
+0 setgray
+438.7949 2.3009 moveto
+(21q22.13) showMiddle
+0.3333 setgray
+30.9188 3.2357 448.6818 2.1571 fillBox
+1 setgray
+464.3209 2.3009 moveto
+(21q22.2) showMiddle
+0.8902 setgray
+58.9614 3.2357 479.6005 2.1571 fillBox
+0 setgray
+509.2610 2.3009 moveto
+(21q22.3) showMiddle
+newpath
+39.7270 5.5726 moveto
+538.7417 5.5726 lineto
+stroke
+newpath
+39.7270 1.9774 moveto
+538.7417 1.9774 lineto
+stroke
+newpath
+39.7270 5.5726 moveto
+39.7270 1.9774 lineto
+stroke
+newpath
+538.7417 5.5726 moveto
+538.7417 1.9774 lineto
+stroke
+1 setgray
+22.2903 3.9547 156.0320 1.7976 fillBox
+0.5882 0.1961 0.1961 setrgbcolor
+newpath
+156.0320 5.7523 moveto
+167.5366 3.7750 lineto
+156.0320 1.7976 lineto
+156.0320 5.7523 lineto
+fill
+newpath
+178.3222 5.7523 moveto
+167.1771 3.7750 lineto
+178.3222 1.7976 lineto
+178.3222 5.7523 lineto
+fill
+1 0 0 setrgbcolor
+499.0146 0.7190 39.1877 6.1119 fillBox
+499.0146 0.7190 39.1877 0.7190 fillBox
+0.7190 6.1119 39.1877 0.7190 fillBox
+0.7190 6.1119 538.2024 0.7190 fillBox
+cliprestore 0 0 540 7.5499 rectclip
+cliprestore 0 0 540 7.5499 rectclip
