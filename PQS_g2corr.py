@@ -63,7 +63,7 @@ def find_gquad(occurences):
 
 t0 = time.clock()
 
-fasta_sequences = SeqIO.parse(open('/home/mookse/workspace/bioinfo/genome/hg38_by_chr/chr19.fa'),'fasta')
+fasta_sequences = SeqIO.parse(open('/home/mookse/workspace/bioinfo/genome/hg38_by_chr/chr1.fa'),'fasta')
 
 for fasta in fasta_sequences:
 	name, sequence = fasta.id, str(fasta.seq)
@@ -97,11 +97,12 @@ g2 = []
 # further calculations are computationally heavy, ~O(n^2), so good to have a progress bar
 printProgressBar(0, N, prefix = 'g_2 building:', suffix = 'complete', length = 99)
 i = 0
-for r in gquad_loci:
+
+for j in range(len(gquad_loci)):
 	s = 0
-	for n in range (1, L-r):
-		s += occupancy[r]*occupancy[n+r]
-	g2.append(s/L)
+	for r_n in gquad_loci[j:]:
+		s += occupancy[gquad_loci[j]]*occupancy[r_n]
+	g2.append(s)
 	i += 1
 	printProgressBar(i + 1, N, prefix = 'g_2 building:', suffix = 'complete', length = 99)
 
